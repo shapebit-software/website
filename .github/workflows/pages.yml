@@ -25,7 +25,7 @@ jobs:
       - name: Check out Wiki
         uses: actions/checkout@v6
         with:
-          repository: shapebit-software/docs.wiki
+          repository: shapebit-software/website.wiki
           path: wiki
       - name: Prepare Wiki content
         run: scripts/prepare-site wiki .jekyll-source

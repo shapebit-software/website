@@ -20,20 +20,20 @@
     <div class="site-shell">
       <aside class="sidebar" id="site-navigation">
         <nav aria-label="Documentation navigation">
-          <a class="nav-link{% if page.url == '/docs/' %} active{% endif %}" href="{{ '/docs/' | relative_url }}">Introduction</a>
-
-          <details class="nav-group"{% unless page.url == '/docs/' or page.url == '/docs/license/' %} open{% endunless %}>
-            <summary>Architecture</summary>
-            <a class="nav-link nav-link-small{% if page.path == 'docs/Architecture.md' %} active{% endif %}" href="{{ '/docs/architecture/' | relative_url }}">Overview</a>
-            <a class="nav-link nav-link-small{% if page.path == 'docs/base-system.md' %} active{% endif %}" href="{{ '/docs/base-system/' | relative_url }}">Base System</a>
-            <a class="nav-link nav-link-small{% if page.path == 'docs/boot-system-lifecycle.md' %} active{% endif %}" href="{{ '/docs/boot-system-lifecycle/' | relative_url }}">Boot and System Lifecycle</a>
-            <a class="nav-link nav-link-small{% if page.path == 'docs/security-identity.md' %} active{% endif %}" href="{{ '/docs/security-identity/' | relative_url }}">Security and Identity</a>
-            <a class="nav-link nav-link-small{% if page.path == 'docs/application-platform.md' %} active{% endif %}" href="{{ '/docs/application-platform/' | relative_url }}">Application Platform</a>
-            <a class="nav-link nav-link-small{% if page.path == 'docs/desktop.md' or page.path contains 'docs/desktop-' %} active{% endif %}" href="{{ '/docs/desktop/' | relative_url }}">Desktop Environment</a>
-            <a class="nav-link nav-link-small{% if page.path == 'docs/diagnostics-recovery.md' %} active{% endif %}" href="{{ '/docs/diagnostics-recovery/' | relative_url }}">Diagnostics and Recovery</a>
-          </details>
-
-          <a class="nav-link{% if page.path == 'docs/License.md' %} active{% endif %}" href="{{ '/docs/license/' | relative_url }}">License</a>
+          {%- for item in site.data.navigation %}
+            {%- if item.children %}
+              {%- assign child_urls = item.children | map: 'url' %}
+              <details class="nav-group"{% if page.url == item.url or child_urls contains page.url %} open{% endif %}>
+                <summary>{{ item.title }}</summary>
+                <a class="nav-link nav-link-small{% if page.url == item.url %} active{% endif %}" href="{{ item.url | relative_url }}">Overview</a>
+                {%- for child in item.children %}
+                  <a class="nav-link nav-link-small{% if page.url == child.url %} active{% endif %}" href="{{ child.url | relative_url }}">{{ child.title }}</a>
+                {%- endfor %}
+              </details>
+            {%- else %}
+              <a class="nav-link{% if page.url == item.url %} active{% endif %}" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            {%- endif %}
+          {%- endfor %}
         </nav>
       </aside>
 

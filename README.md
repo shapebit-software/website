@@ -4,10 +4,10 @@ This repository contains the ShapeBit OS landing page, Jekyll layout, and
 GitHub Pages deployment.
 
 Documentation content is maintained in the
-[ShapeBit Docs Wiki](https://github.com/shapebit-software/docs/wiki) and
+[ShapeBit Docs Wiki](https://github.com/shapebit-software/website/wiki) and
 published under [shapebit.software/docs/](https://shapebit.software/docs/).
 Published page paths are normalized to lowercase, for example
-`/docs/system-design/`. The site landing page is maintained in this repository.
+`/docs/architecture/`. The site landing page is maintained in this repository.
 
 ## Local development
 

@@ -7,7 +7,7 @@ run = "bundle install"
 
 [tasks."wiki:clone"]
 description = "Clone the canonical Wiki content"
-run = "test -d wiki/.git || git clone git@github.com:shapebit-software/docs.wiki.git wiki"
+run = "test -d wiki/.git || git clone git@github.com:shapebit-software/website.wiki.git wiki"
 
 [tasks.prepare]
 description = "Prepare the Wiki content for Jekyll"
