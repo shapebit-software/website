@@ -440,24 +440,19 @@ th {
   line-height: 1.08;
 }
 
-.project-introduction-copy {
-  max-width: 48rem;
+.vision-points {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem 2rem;
 }
 
-.project-introduction-copy p {
-  margin: 0 0 1.25rem;
+.vision-points h3 {
+  margin: 0 0 0.65rem;
+}
+
+.vision-points p {
+  margin: 0;
   color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.75;
-}
-
-.project-introduction-copy p:last-child {
-  margin-bottom: 0;
-}
-
-.project-introduction-copy .project-foundation {
-  color: var(--text);
-  font-weight: 700;
 }
 
 .landing-footer {
@@ -529,6 +524,10 @@ th {
   .project-introduction,
   .landing-footer {
     width: min(100% - 2rem, 78rem);
+  }
+
+  .vision-points {
+    grid-template-columns: 1fr;
   }
 
   .hero h1 {
