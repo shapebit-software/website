@@ -4,13 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% seo %}
+    <link rel="icon" href="{{ '/assets/images/shapebit-favicon.ico' | relative_url }}" sizes="any">
+    <link rel="apple-touch-icon" href="{{ '/assets/images/shapebit-icon.png' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="{{ '/' | relative_url }}" aria-label="ShapeBit home">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span>ShapeBit <strong>Docs</strong></span>
+        <img class="brand-logo" src="{{ '/assets/images/shapebit-horizontal.png' | relative_url }}" width="2160" height="707" alt="ShapeBit">
+        <strong>Docs</strong>
       </a>
       <button class="navigation-toggle" type="button" aria-controls="site-navigation" aria-expanded="false">
         Menu
