@@ -461,11 +461,20 @@ th {
 .landing-footer {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
   width: min(100% - 3rem, 78rem);
   margin: 0 auto;
   padding: 2rem 0;
   border-top: 1px solid var(--border);
   color: var(--muted);
+}
+
+.footer-mascot {
+  display: block;
+  width: 4.5rem;
+  height: auto;
+  flex-shrink: 0;
 }
 
 @media (max-width: 800px) {
