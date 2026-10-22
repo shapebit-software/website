@@ -80,8 +80,14 @@ a {
 
 .brand-logo {
   display: block;
-  width: clamp(9rem, 20vw, 11rem);
+  width: 9rem;
   height: auto;
+}
+
+@media (prefers-color-scheme: dark) {
+  .brand-logo-docs {
+    filter: brightness(0) invert(1);
+  }
 }
 
 .header-links {
