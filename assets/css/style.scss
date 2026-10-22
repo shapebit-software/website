@@ -80,11 +80,8 @@ a {
 
 .brand-logo {
   display: block;
-  width: 9rem;
+  width: clamp(9rem, 20vw, 11rem);
   height: auto;
-  padding: 0.25rem 0.45rem;
-  border-radius: 0.45rem;
-  background: #171a21;
 }
 
 .header-links {

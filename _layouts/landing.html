@@ -11,7 +11,10 @@
   <body class="landing-page">
     <header class="site-header landing-header">
       <a class="brand" href="{{ '/' | relative_url }}" aria-label="ShapeBit home">
-        <img class="brand-logo" src="{{ '/assets/images/shapebit-horizontal.png' | relative_url }}" width="2160" height="707" alt="ShapeBit">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="{{ '/assets/images/shapebit-horizontal.png' | relative_url }}" width="2160" height="707">
+          <img class="brand-logo" src="{{ '/assets/images/shapebit-horizontal-dark.png' | relative_url }}" width="2179" height="722" alt="ShapeBit">
+        </picture>
       </a>
       <nav class="header-links landing-links" aria-label="Main navigation">
         <a href="{{ '/demo/' | relative_url }}">Demo</a>
