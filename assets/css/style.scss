@@ -470,6 +470,67 @@ th {
   color: var(--muted);
 }
 
+.footer-info {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.footer-contact {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.footer-contact a {
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-contact a:hover,
+.footer-contact a:focus-visible {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.footer-copy {
+  display: inline-flex;
+  padding: 0.25rem;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.footer-copy[hidden] {
+  display: none;
+}
+
+.footer-copy:hover,
+.footer-copy:focus-visible,
+.footer-copy.is-copied {
+  color: var(--accent);
+}
+
+.footer-copy svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.footer-copied-icon,
+.footer-copy.is-copied .footer-copy-icon {
+  display: none;
+}
+
+.footer-copy.is-copied .footer-copied-icon {
+  display: block;
+}
+
 .footer-mascot {
   display: block;
   width: 4.5rem;
