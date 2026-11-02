@@ -3,11 +3,11 @@
 set -euo pipefail
 
 repo_root=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
-wiki_source=$(realpath "${1:?usage: prepare-site WIKI_SOURCE [DESTINATION]}")
+docs_source=$(realpath "${1:?usage: prepare-site DOCS_SOURCE [DESTINATION]}")
 destination=$(realpath -m "${2:-$repo_root/.jekyll-source}")
 
-if [[ ! -f "$wiki_source/Home.md" ]]; then
-    echo "Wiki source does not contain Home.md: $wiki_source" >&2
+if [[ ! -f "$docs_source/Home.md" ]]; then
+    echo "Documentation source does not contain Home.md: $docs_source" >&2
     exit 1
 fi
 
@@ -29,10 +29,10 @@ cp "$repo_root/index.html" "$destination/index.html"
 cp -R "$repo_root/demo" "$destination/demo"
 
 mkdir -p "$destination/docs"
-find "$wiki_source" -maxdepth 1 -type f -name '*.md' ! -name '_Sidebar.md' \
+find "$docs_source" -maxdepth 1 -type f -name '*.md' ! -name '_Sidebar.md' \
     -exec cp {} "$destination/docs/" \;
 
-# Map a Wiki page name to its published URL.
+# Map a documentation page name to its published URL.
 page_url() {
     if [[ "$1" == "Home" ]]; then
         printf '/docs/'
@@ -41,11 +41,11 @@ page_url() {
     fi
 }
 
-# Build the documentation navigation from the Wiki sidebar.
+# Build the documentation navigation from the sidebar.
 mkdir -p "$destination/_data"
 navigation="$destination/_data/navigation.yml"
 : > "$navigation"
-if [[ -f "$wiki_source/_Sidebar.md" ]]; then
+if [[ -f "$docs_source/_Sidebar.md" ]]; then
     link_pattern='^( *)[-*] \[([^]]+)\]\(([^)]+)\)'
     while IFS= read -r line; do
         [[ "$line" =~ $link_pattern ]] || continue
@@ -62,10 +62,10 @@ if [[ -f "$wiki_source/_Sidebar.md" ]]; then
             printf -- '    - title: "%s"\n      url: "%s"\n' \
                 "$title" "$target" >> "$navigation"
         fi
-    done < "$wiki_source/_Sidebar.md"
+    done < "$docs_source/_Sidebar.md"
 fi
 
-# Rewrite Wiki page links, such as [Base](Architecture-Base), to site URLs.
+# Rewrite page links, such as [Base](Architecture-Base.md), to site URLs.
 link_rewrites=()
 while IFS= read -r -d '' page; do
     page_name=$(basename "$page" .md)
