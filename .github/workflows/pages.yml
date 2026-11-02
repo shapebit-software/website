@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - main
-  gollum:
+  repository_dispatch:
+    types:
+      - docs-updated
   workflow_dispatch:
 
 permissions:
@@ -22,13 +24,14 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
-      - name: Check out Wiki
+      - name: Check out documentation
         uses: actions/checkout@v6
         with:
-          repository: shapebit-software/website.wiki
-          path: wiki
-      - name: Prepare Wiki content
-        run: scripts/prepare-site wiki .jekyll-source
+          repository: shapebit-software/os
+          path: os
+          sparse-checkout: docs
+      - name: Prepare documentation
+        run: scripts/prepare-site os/docs .jekyll-source
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll

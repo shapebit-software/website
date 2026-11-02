@@ -5,14 +5,9 @@ ruby = "3.3.4"
 description = "Install the documentation dependencies"
 run = "bundle install"
 
-[tasks."wiki:clone"]
-description = "Clone the canonical Wiki content"
-run = "test -d wiki/.git || git clone git@github.com:shapebit-software/website.wiki.git wiki"
-
 [tasks.prepare]
-description = "Prepare the Wiki content for Jekyll"
-depends = ["wiki:clone"]
-run = "scripts/prepare-site wiki .jekyll-source"
+description = "Prepare the documentation from the OS repository for Jekyll"
+run = "scripts/prepare-site \"${OS_DOCS:-../os/docs}\" .jekyll-source"
 
 [tasks.serve]
 description = "Preview the documentation site locally"
