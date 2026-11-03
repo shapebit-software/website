@@ -1054,25 +1054,29 @@ html:has(.landing-page) {
   overflow-wrap: anywhere;
 }
 
-.footer-contact a {
+#contact-email {
   color: var(--text);
   font-weight: 600;
-  text-decoration: none;
-}
-
-.footer-contact a:hover,
-.footer-contact a:focus-visible {
-  text-decoration: underline;
 }
 
 .footer-copy {
   display: inline-flex;
+  align-items: center;
+  gap: 6px;
   padding: 0.25rem;
   border: 0;
   background: none;
   color: var(--muted);
+  font: inherit;
+  text-align: left;
   vertical-align: middle;
+  overflow-wrap: anywhere;
   cursor: pointer;
+}
+
+.footer-copy:hover #contact-email,
+.footer-copy:focus-visible #contact-email {
+  text-decoration: underline;
 }
 
 .footer-copy[hidden] {
