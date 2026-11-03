@@ -162,6 +162,7 @@ title: ShapeBit OS
     const address = ['hello', 'shapebit.software'].join('@');
     const email = document.getElementById('contact-email');
     email.textContent = address;
+    document.getElementById('share-ideas').href = 'mailto:' + address;
 
     // Clicking the address copies it rather than opening a mail app.
     const copy = document.getElementById('contact-copy');
