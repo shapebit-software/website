@@ -79,16 +79,15 @@ find "$destination/docs" -maxdepth 1 -type f -name '*.md' \
 # Old names of renamed pages, so that their published URLs keep working.
 declare -A old_names=(
     [Development]="building developer-guide"
-    [Design]="architecture"
+    [Design]="architecture architecture-installation design-installation"
     [Design-Applications]="architecture-applications"
     [Design-Base]="architecture-base"
     [Design-Desktop]="architecture-desktop"
-    [Design-Installation]="architecture-installation"
     [Design-Lifecycle]="architecture-lifecycle"
     [Design-Recovery]="architecture-recovery"
     [Design-Security]="architecture-security"
     [Shortcuts]="keyboard-shortcuts"
-    [Guide]="user-guide"
+    [User-Guide]="guide"
 )
 
 while IFS= read -r -d '' page; do
