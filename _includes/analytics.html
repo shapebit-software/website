@@ -1,2 +1,16 @@
 <!-- 100% privacy-first analytics -->
+<script>
+  // Queue events until the analytics script has loaded.
+  window.sa_event = window.sa_event || function () {
+    const args = [].slice.call(arguments);
+    window.sa_event.q ? window.sa_event.q.push(args) : (window.sa_event.q = [args]);
+  };
+  // Count clicks on elements marked with data-event="event_name".
+  document.addEventListener('click', function (event) {
+    const target = event.target.closest('[data-event]');
+    if (target) window.sa_event(target.dataset.event);
+  });
+</script>
 <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<!-- Counts clicks on outbound links, email links and file downloads. -->
+<script async src="https://scripts.simpleanalyticscdn.com/auto-events.js" data-collect="outbound,emails,downloads"></script>

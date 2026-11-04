@@ -41,6 +41,7 @@
         copy.title = 'Copy failed';
         return;
       }
+      if (window.sa_event) window.sa_event('copy_email');
       copy.classList.add('is-copied');
       copy.setAttribute('aria-label', 'Copied');
       copy.title = 'Copied';

@@ -40,8 +40,9 @@ policies.
 
 - **No cookies.** Nothing is stored in your browser.
 - **Visit counts.** We use [Simple Analytics](https://docs.simpleanalytics.com/what-we-collect),
-  which counts page views, referring sites, and browser and device types. It
-  stores no IP addresses and no data that identifies you.
+  which counts page views, referring sites, browser and device types, and
+  clicks on buttons and links, such as the download button. It stores no IP
+  addresses and no data that identifies you.
 - **Fonts.** The home page loads fonts from
   [Google Fonts](https://developers.google.com/fonts/faq/privacy), so Google
   sees your IP address.
