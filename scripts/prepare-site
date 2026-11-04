@@ -23,10 +23,11 @@ rm -rf -- "$destination"
 mkdir -p "$destination"
 
 cp "$repo_root/_config.yml" "$destination/_config.yml"
+cp -R "$repo_root/_includes" "$destination/_includes"
 cp -R "$repo_root/_layouts" "$destination/_layouts"
 cp -R "$repo_root/assets" "$destination/assets"
 cp "$repo_root/index.html" "$destination/index.html"
-cp -R "$repo_root/demo" "$destination/demo"
+cp "$repo_root/privacy.md" "$destination/privacy.md"
 
 mkdir -p "$destination/docs"
 find "$docs_source" -maxdepth 1 -type f -name '*.md' ! -name '_Sidebar.md' \

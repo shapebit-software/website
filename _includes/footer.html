@@ -1,0 +1,54 @@
+<footer id="contact" class="landing-footer">
+  <p class="footer-legal">
+    <small>&copy; {{ site.time | date: '%Y' }} ShapeBit Software</small>
+    <a href="{{ '/privacy/' | relative_url }}">Privacy</a>
+  </p>
+  <p class="footer-contact">
+    <span id="contact-email">hello at shapebit dot software</span>
+    <button id="contact-copy" class="footer-copy" type="button" title="Copy email address" hidden>
+      <svg class="footer-copy-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>
+      <svg class="footer-copied-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+    </button>
+  </p>
+</footer>
+
+<script>
+  // Build the address in the browser so it is not in the page source for
+  // scrapers. Without JavaScript, people still read the spelled-out form.
+  (function () {
+    const address = ['hello', 'shapebit.software'].join('@');
+    const email = document.getElementById('contact-email');
+    email.textContent = address;
+    // Links that write to us: data-email="link" keeps its text,
+    // data-email="address" shows the address.
+    document.querySelectorAll('[data-email]').forEach(function (link) {
+      link.href = 'mailto:' + address;
+      if (link.dataset.email === 'address') link.textContent = address;
+    });
+
+    // Clicking the address copies it rather than opening a mail app.
+    const copy = document.getElementById('contact-copy');
+    if (!navigator.clipboard) return;
+    const label = 'Copy email address ' + address;
+    copy.prepend(email);
+    copy.setAttribute('aria-label', label);
+    copy.hidden = false;
+    copy.addEventListener('click', async function () {
+      try {
+        await navigator.clipboard.writeText(address);
+      } catch {
+        copy.setAttribute('aria-label', 'Copy failed');
+        copy.title = 'Copy failed';
+        return;
+      }
+      copy.classList.add('is-copied');
+      copy.setAttribute('aria-label', 'Copied');
+      copy.title = 'Copied';
+      setTimeout(function () {
+        copy.classList.remove('is-copied');
+        copy.setAttribute('aria-label', label);
+        copy.title = 'Copy email address';
+      }, 2000);
+    });
+  })();
+</script>
