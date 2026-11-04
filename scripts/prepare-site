@@ -76,6 +76,12 @@ done < <(find "$destination/docs" -maxdepth 1 -type f -name '*.md' -print0)
 find "$destination/docs" -maxdepth 1 -type f -name '*.md' \
     -exec sed -i "${link_rewrites[@]}" {} +
 
+# Old names of renamed pages, so that their published URLs keep working.
+declare -A old_names=(
+    [Developer-Guide]="building development"
+    [Shortcuts]="keyboard-shortcuts"
+)
+
 while IFS= read -r -d '' page; do
     page_name=$(basename "$page" .md)
     if [[ "$page_name" == "Home" ]]; then
@@ -83,7 +89,10 @@ while IFS= read -r -d '' page; do
         redirect_from=""
     else
         permalink="/docs/${page_name,,}/"
-        redirect_from="/${page_name,,}/"
+        redirect_from=$'\n  - '"/${page_name,,}/"
+        for old_name in ${old_names[$page_name]:-}; do
+            redirect_from+=$'\n  - '"/docs/${old_name}/"$'\n  - '"/${old_name}/"
+        done
     fi
 
     prepared_page=$(mktemp)
@@ -92,7 +101,7 @@ while IFS= read -r -d '' page; do
             head -n 1 "$page"
             printf 'permalink: %s\n' "$permalink"
             if [[ -n "$redirect_from" ]]; then
-                printf 'redirect_from: %s\n' "$redirect_from"
+                printf 'redirect_from:%s\n' "$redirect_from"
             fi
             tail -n +2 "$page"
         } > "$prepared_page"
@@ -101,7 +110,7 @@ while IFS= read -r -d '' page; do
             printf '%s\n' '---'
             printf 'permalink: %s\n' "$permalink"
             if [[ -n "$redirect_from" ]]; then
-                printf 'redirect_from: %s\n' "$redirect_from"
+                printf 'redirect_from:%s\n' "$redirect_from"
             fi
             printf '%s\n\n' '---'
             sed -n '1,$p' "$page"
