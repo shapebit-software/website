@@ -65,7 +65,7 @@ if [[ -f "$docs_source/_Sidebar.md" ]]; then
     done < "$docs_source/_Sidebar.md"
 fi
 
-# Rewrite page links, such as [Base](Architecture-Base.md), to site URLs.
+# Rewrite page links, such as [Base](Design-Base.md), to site URLs.
 link_rewrites=()
 while IFS= read -r -d '' page; do
     page_name=$(basename "$page" .md)
@@ -78,8 +78,17 @@ find "$destination/docs" -maxdepth 1 -type f -name '*.md' \
 
 # Old names of renamed pages, so that their published URLs keep working.
 declare -A old_names=(
-    [Developer-Guide]="building development"
+    [Development]="building developer-guide"
+    [Design]="architecture"
+    [Design-Applications]="architecture-applications"
+    [Design-Base]="architecture-base"
+    [Design-Desktop]="architecture-desktop"
+    [Design-Installation]="architecture-installation"
+    [Design-Lifecycle]="architecture-lifecycle"
+    [Design-Recovery]="architecture-recovery"
+    [Design-Security]="architecture-security"
     [Shortcuts]="keyboard-shortcuts"
+    [Guide]="user-guide"
 )
 
 while IFS= read -r -d '' page; do
