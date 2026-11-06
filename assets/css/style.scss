@@ -433,6 +433,10 @@ html:has(.landing-page) {
   letter-spacing: -0.04em;
 }
 
+.hero-copy h1 span {
+  color: var(--accent);
+}
+
 .landing-page main .hero-copy > p {
   max-width: 620px;
   color: var(--muted);
@@ -561,7 +565,7 @@ html:has(.landing-page) {
   padding: 60px 32px;
 }
 
-.feature-updates {
+.feature-stability {
   padding: 60px 32px 120px;
 }
 
@@ -579,7 +583,7 @@ html:has(.landing-page) {
   font-size: 13px;
 }
 
-.landing-page main .feature-updates .feature-label {
+.landing-page main .feature-stability .feature-label {
   color: var(--orange-text);
 }
 
@@ -589,10 +593,35 @@ html:has(.landing-page) {
   letter-spacing: -0.03em;
 }
 
-.landing-page main .feature-copy > p:last-child {
+.landing-page main .feature-copy > p:not(.feature-label),
+.landing-page main .pricing-copy > p:not(.feature-label) {
   color: var(--muted);
   font-size: 18px;
   line-height: 1.6;
+}
+
+.feature-points {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 600;
+}
+
+.feature-points li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.feature-points li::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  background: var(--orange);
 }
 
 .feature-visual {
@@ -921,55 +950,89 @@ html:has(.landing-page) {
   font-weight: 600;
 }
 
-.foundations {
+.pricing {
   border-top: 2px solid var(--text);
   border-bottom: 2px solid var(--text);
   background: #ffffff;
 }
 
-.foundations-inner {
+.pricing-inner {
   display: flex;
-  flex-direction: column;
-  gap: 40px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 56px;
   max-width: 1264px;
   margin: 0 auto;
   padding: 96px 32px;
 }
 
-.landing-page main .foundations-inner h2 {
-  font-size: clamp(32px, 4vw, 48px);
-  line-height: 1.05;
+.pricing-copy {
+  display: flex;
+  flex: 1 1 400px;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+
+.landing-page main .pricing-copy h2 {
+  font-size: clamp(34px, 4.4vw, 52px);
+  line-height: 1.02;
   letter-spacing: -0.03em;
-  text-align: center;
 }
 
-.foundation-tiles {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+.pricing-plans {
+  display: flex;
+  flex: 1 1 400px;
+  flex-direction: column;
   gap: 16px;
+  min-width: 0;
 }
 
-.foundation-tiles article {
+.plan {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 28px;
-  border: 2px solid var(--text);
+  gap: 10px;
+  padding: 22px 24px;
   border-radius: 6px;
+}
+
+.plan-free {
+  border: 2px solid var(--text);
   background: var(--background);
 }
 
-.foundation-tiles svg {
-  color: var(--accent);
+.plan-services {
+  border: 2px dashed var(--line);
 }
 
-.landing-page main .foundation-tiles h3 {
+.plan-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 16px;
+}
+
+.landing-page main .plan h3 {
   font-size: 22px;
   line-height: normal;
   letter-spacing: normal;
 }
 
-.landing-page main .foundation-tiles p {
+.plan-price {
+  color: var(--accent);
+  font-family: var(--heading-font);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.plan-status {
+  color: var(--orange-text);
+  font-family: var(--label-font);
+  font-size: 11px;
+}
+
+.landing-page main .plan p {
   color: var(--muted);
   line-height: 1.6;
 }
@@ -1238,7 +1301,7 @@ html:has(.landing-page) {
   .hero,
   .statement-inner,
   .feature,
-  .foundations-inner,
+  .pricing-inner,
   .get-involved-inner,
   .landing-footer {
     padding-right: 20px;
