@@ -25,7 +25,7 @@ website, they see your IP address and what is downloaded.
 | --- | --- | --- |
 | System updates | [GitHub](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement) | Every 6 hours, but not on metered connections |
 | Apps | [Flathub](https://flathub.org/privacy-policy) | When you browse or install apps, and once a day for app updates |
-| Assistant and live dictation | [Hugging Face](https://huggingface.co/privacy), GitHub | Only when you choose to download them |
+| Assistant and dictation | [Hugging Face](https://huggingface.co/privacy), GitHub | Only when you choose to download them |
 | The correct time | Public time servers (pool.ntp.org) | Regularly |
 
 **The assistant and dictation run on your computer.** What you type or say to
