@@ -431,26 +431,12 @@ html:has(.landing-page) {
 }
 
 .landing-page main .hero-badge {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 4px 10px;
-  padding: 6px 14px 6px 6px;
+  padding: 4px 14px;
   border: 2px solid var(--text);
   border-radius: 999px;
-  background: #ffffff;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.hero-badge span {
-  padding: 3px 10px;
-  border-radius: 999px;
   background: var(--orange);
-  color: var(--text);
   font-family: var(--label-font);
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .landing-page main .hero-copy h1 {
