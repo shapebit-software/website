@@ -5,8 +5,8 @@ title: ShapeBit OS
 
 <section class="hero">
   <div class="hero-copy">
-    <h1>Simple. Stable.<br><span>Yours.</span></h1>
-    <p>A Linux desktop that just works. Ready from the first boot, calm through every update, and yours to reshape when you want more.</p>
+    <h1>Simple. Smart.<br><span>Yours.</span></h1>
+    <p>A Linux desktop that works the way you do. Easy from the first minute, smart where it counts, and yours to reshape.</p>
     <div class="cta-row">
       <a class="button button-primary" href="https://download.shapebit.software/installer.img.xz" data-event="click_download">
         <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v10"/><path d="M4.5 7.5 9 12l4.5-4.5"/><path d="M3 16h12"/></svg>
@@ -25,81 +25,131 @@ title: ShapeBit OS
   </figure>
 </section>
 
-<section class="statement">
-  <div class="statement-inner">
-    <p class="statement-label">Made for everyone</p>
-    <h2>No terminal required.<br><span>Always there if you want it.</span></h2>
-    <p>ShapeBit is for people who just want their computer to work. Sensible defaults and clear settings cover everyday life, and the terminal and deeper controls wait quietly for when you get curious.</p>
+<section class="tour">
+  <div class="tour-inner">
+    <p class="tour-label">Watch the tour</p>
+    <h2>See ShapeBit <span>in action.</span></h2>
+    <p>Tiling, dictation and the AI agent, working together in one short tour.</p>
   </div>
-</section>
-
-<section class="feature feature-workspace">
-  <div class="feature-copy">
-    <p class="feature-label">Workspace</p>
-    <h2>Built for how people work.</h2>
-    <p>Files, terminal and music laid out side by side, so you spend your time working instead of dragging windows around. Designed for how people use computers today, and ready for how they will tomorrow.</p>
-  </div>
-  <figure class="feature-visual workspace-visual">
-    <div class="workspace-crop">
-      <img src="{{ '/assets/images/demo.png' | relative_url }}" width="1920" height="1076" alt="Close-up of the ShapeBit desktop: terminal tiled above the music player" loading="lazy">
-    </div>
-    <div class="tiling-schematic" aria-hidden="true">
-      <div></div>
-      <div></div>
-      <div></div>
+  <figure class="tour-video">
+    <img src="{{ '/assets/images/demo.png' | relative_url }}" width="1920" height="1076" alt="" loading="lazy">
+    <div class="tour-overlay">
+      <span class="tour-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 28 28"><path d="M9 6v16l13-8z" fill="currentColor"/></svg></span>
+      <span class="tour-length">Video coming soon</span>
     </div>
   </figure>
 </section>
 
-<section class="feature feature-customization">
-  <figure class="feature-visual appearance-visual" aria-hidden="true">
-    <div class="appearance-panel">
-      <span class="appearance-title">Appearance</span>
-      <div class="appearance-group">
-        <span class="appearance-caption">Accent</span>
-        <div class="accent-swatches">
-          <span class="is-selected"></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+<section class="feature">
+  <div class="feature-copy">
+    <p class="feature-label">Window management</p>
+    <h2>Windows that arrange themselves.</h2>
+    <p>No more dragging and resizing. Pick from eight tiling layouts and switch whenever you like.</p>
+  </div>
+  <figure class="feature-visual visual-lavender shadow-right layouts-visual">
+    <div class="layout-preview" data-layout="columns" aria-hidden="true">
+      <span class="window-a"></span>
+      <span class="window-b"></span>
+      <span class="window-c"></span>
+    </div>
+    <div class="layout-picker" role="group" aria-label="Tiling layouts">
+      <button type="button" data-layout="lead" aria-pressed="false"><span class="thumb thumb-lead"><i></i><i></i><i></i><i></i></span>Lead</button>
+      <button type="button" data-layout="dwindle" aria-pressed="false"><span class="thumb thumb-dwindle"><i></i><i></i><i></i><i></i></span>Dwindle</button>
+      <button type="button" data-layout="columns" aria-pressed="true"><span class="thumb thumb-columns"><i></i><i></i><i></i></span>Columns</button>
+      <button type="button" data-layout="center" aria-pressed="false"><span class="thumb thumb-center"><i></i><i></i><i></i><i></i><i></i></span>Center</button>
+      <button type="button" data-layout="grid" aria-pressed="false"><span class="thumb thumb-grid"><i></i><i></i><i></i><i></i></span>Grid</button>
+      <button type="button" data-layout="tabs" aria-pressed="false"><span class="thumb thumb-tabs"><i></i><i></i></span>Tabs</button>
+      <button type="button" data-layout="rows" aria-pressed="false"><span class="thumb thumb-rows"><i></i><i></i><i></i></span>Rows</button>
+      <button type="button" data-layout="accordion" aria-pressed="false"><span class="thumb thumb-accordion"><i></i><i></i><i></i><i></i></span>Accordion</button>
+    </div>
+  </figure>
+</section>
+
+<section class="feature feature-reverse">
+  <figure class="feature-visual visual-peach shadow-left" aria-hidden="true">
+    <div class="dictation">
+      <div class="dictation-note">
+        <span>Note</span>
+        <p>Remind the team that the design review moves to Thursday, and send the new mockups before lunch<i class="caret"></i></p>
       </div>
-      <div class="appearance-group">
-        <span class="appearance-caption">Layout</span>
-        <div class="layout-options">
-          <div class="layout-tiled is-selected"><span></span><span></span></div>
-          <div class="layout-floating"><span></span><span></span></div>
-          <div class="layout-single"><span></span></div>
-        </div>
-      </div>
-      <div class="appearance-toggle">
-        <span>Dark panel</span>
-        <span class="toggle-switch"><span></span></span>
+      <div class="dictation-pill">
+        <span class="dictation-mic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="5.5" y="1.5" width="5" height="8" rx="2.5"/><path d="M3 7.5a5 5 0 0 0 10 0M8 12.5v2"/></svg></span>
+        <span class="dictation-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        Listening &middot; offline
       </div>
     </div>
   </figure>
   <div class="feature-copy">
-    <p class="feature-label">Customization</p>
-    <h2>Shape it around you.</h2>
-    <p>Free to use and free to change. Pick your colors and layout, add the apps you like, and build your own tools when you're ready. ShapeBit makes room for them.</p>
+    <p class="feature-label label-orange">Offline dictation</p>
+    <h2>Talk instead of type.</h2>
+    <p>Built-in speech-to-text runs entirely on your computer. Dictate notes, messages and documents with no internet connection, and nothing you say is ever sent to the cloud.</p>
   </div>
 </section>
 
-<section class="feature feature-stability">
+<section class="feature">
   <div class="feature-copy">
-    <p class="feature-label">Stability</p>
-    <h2>Stable by design.</h2>
-    <p>ShapeBit stands on Fedora, one of the most trusted foundations in Linux. Updates never break your day, and if something doesn't feel right, you step back to the version that did.</p>
-    <ul class="feature-points">
-      <li>Fedora foundation</li>
-      <li>Atomic updates, tested before release</li>
-      <li>One-step rollback</li>
-    </ul>
+    <p class="feature-label label-teal">AI agent</p>
+    <h2>Private by default. Powerful when you choose.</h2>
+    <p>Ask in plain words and the agent gets it done on your computer. Out of the box it runs fully offline, so your files and conversations stay on your device.</p>
+    <p>Want more power? Online AI models are on the way, as an option you switch on.</p>
   </div>
-  <figure class="feature-visual updates-visual" aria-hidden="true">
+  <figure class="feature-visual visual-mint shadow-right" aria-hidden="true">
+    <div class="agent">
+      <div class="agent-head"><span>Agent</span><span class="agent-status">Running locally</span></div>
+      <p class="agent-ask">Tidy up my Downloads folder</p>
+      <div class="agent-reply">
+        <p>Sorted into Documents, Images and Archives.</p>
+        <p class="agent-done">&check; Done, nothing left your computer.</p>
+      </div>
+    </div>
+  </figure>
+</section>
+
+<section class="feature feature-reverse">
+  <figure class="feature-visual visual-lavender shadow-left shell-visual" aria-hidden="true">
+    <div class="shell-desktop">
+      <div class="shell-bar">
+        <span class="shell-launcher"></span>
+        <span class="shell-workspaces"><i></i><i></i><i></i></span>
+        <span class="shell-clock">16:28</span>
+        <span class="shell-slot"></span>
+        <span class="shell-tray"></span>
+      </div>
+      <div class="shell-windows">
+        <span></span>
+        <span></span>
+        <span class="shell-chip">&#9656; Media</span>
+      </div>
+    </div>
+    <div class="shell-settings">
+      <div class="shell-card">
+        <span class="shell-card-title">Bar position</span>
+        <div class="shell-segments"><span class="is-selected">Top</span><span>Bottom</span><span>Left</span><span>Right</span></div>
+        <div class="shell-accent">Accent <i class="is-selected"></i><i></i><i></i></div>
+      </div>
+      <div class="shell-card">
+        <span class="shell-card-title">Bar items</span>
+        <div class="shell-items"><span>+ Clock</span><span>+ Media</span><span>+ Battery</span><span>+ Workspaces</span></div>
+      </div>
+    </div>
+  </figure>
+  <div class="feature-copy">
+    <p class="feature-label">Customizable desktop</p>
+    <h2>Reshape the whole shell.</h2>
+    <p>Not just colours and wallpapers. Choose where the bar lives, what's on it and how it looks. Add, remove and rearrange buttons and indicators until the desktop works the way you think.</p>
+  </div>
+</section>
+
+<section class="feature">
+  <div class="feature-copy">
+    <p class="feature-label label-orange">Automatic updates</p>
+    <h2>Updates that take care of themselves.</h2>
+    <p>ShapeBit stands on Fedora, one of the most trusted foundations in Linux. Updates install automatically in the background, atomic and tested before release. If something doesn't feel right, you step back to the version that did.</p>
+  </div>
+  <figure class="feature-visual visual-peach shadow-right updates-visual" aria-hidden="true">
     <div class="update-card update-current">
       <span class="update-check"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5l3.2 3L14 5.5"/></svg></span>
-      <div class="update-text"><span>System updated</span><span>Today &middot; tested before release</span></div>
+      <div class="update-text"><span>System updated</span><span>Today &middot; installed automatically</span></div>
       <span class="update-badge">Current</span>
     </div>
     <div class="update-card update-previous">
@@ -111,12 +161,33 @@ title: ShapeBit OS
   </figure>
 </section>
 
+<section class="feature feature-reverse feature-last">
+  <figure class="feature-visual visual-lavender shadow-left easy-visual" aria-hidden="true">
+    <div class="terminal">
+      <span class="terminal-dots"><i></i><i></i><i></i></span>
+      <code><b>~</b> $ <i class="caret"></i></code>
+    </div>
+    <div class="quick-settings">
+      <span class="quick-title">Quick settings</span>
+      <div class="quick-row">Wi-Fi <span class="toggle is-on"></span></div>
+      <div class="quick-row">Bluetooth <span class="toggle is-on"></span></div>
+      <div class="quick-row">Night light <span class="toggle"></span></div>
+      <div class="quick-volume">Volume <span><i></i></span></div>
+    </div>
+  </figure>
+  <div class="feature-copy">
+    <p class="feature-label">Easy to use</p>
+    <h2>No terminal required. Always there if you want it.</h2>
+    <p>ShapeBit is for people who just want their computer to work. Sensible defaults and clear settings cover everyday life, and the terminal and deeper controls wait quietly for when you get curious.</p>
+  </div>
+</section>
+
 <section class="pricing">
   <div class="pricing-inner">
     <div class="pricing-copy">
       <p class="feature-label">Pricing</p>
       <h2>Free. Now and always.</h2>
-      <p>ShapeBit OS is free to download, use and change, and it stays that way. To fund full-time development, we're exploring optional paid online services that add real value on top, starting with backups.</p>
+      <p>ShapeBit OS is free to download, use and change, and it stays that way. To fund full-time development, we're exploring optional paid online services that add real value on top, possibly backups.</p>
       <p>You'll never need them to use your computer.</p>
     </div>
     <div class="pricing-plans">
@@ -126,7 +197,7 @@ title: ShapeBit OS
       </article>
       <article class="plan plan-services">
         <div class="plan-head"><h3>Online services</h3><span class="plan-status">Optional &middot; in exploration</span></div>
-        <p>Extras that make life easier, like backups of your files and settings. Paid, and entirely up to you.</p>
+        <p>Extras that make life easier, possibly backups of your files and settings. Paid, and entirely up to you.</p>
       </article>
     </div>
   </div>
@@ -146,3 +217,17 @@ title: ShapeBit OS
     </div>
   </div>
 </section>
+
+<script>
+  // Layout picker: the preview above shows the chosen tiling layout.
+  (function () {
+    const preview = document.querySelector('.layout-preview');
+    const buttons = document.querySelectorAll('.layout-picker button');
+    buttons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        buttons.forEach(function (other) { other.setAttribute('aria-pressed', other === button); });
+        preview.dataset.layout = button.dataset.layout;
+      });
+    });
+  })();
+</script>
