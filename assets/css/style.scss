@@ -543,95 +543,55 @@ html:has(.landing-page) {
   }
 }
 
-/* Tour: the video frame straddles the dark band and the page below. */
+/* Testers */
 
-.tour {
-  padding: 0 32px;
-  background: linear-gradient(var(--text) calc(100% - 180px), var(--background) 0);
+.testers {
+  background: var(--text);
   color: #ffffff;
 }
 
-.tour-inner {
+.testers-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
   max-width: 1064px;
   margin: 0 auto;
-  padding: 136px 0 72px;
+  padding: 136px 32px 120px;
   text-align: center;
 }
 
-.landing-page main .tour-label {
+.landing-page main .testers-label {
   color: var(--orange);
   font-family: var(--label-font);
   font-size: 14px;
 }
 
-.landing-page main .tour h2 {
+.landing-page main .testers h2 {
   font-size: clamp(36px, 5.4vw, 68px);
   line-height: 1.02;
   letter-spacing: -0.03em;
 }
 
-.tour h2 span {
+.testers h2 span {
   color: var(--accent-light);
 }
 
-.landing-page main .tour-inner > p:last-child {
-  max-width: 560px;
+.landing-page main .testers-inner > p:not(.testers-label) {
+  max-width: 600px;
   color: #cfcbdd;
   font-size: 19px;
   line-height: 1.6;
 }
 
-.tour-video {
-  position: relative;
-  max-width: 1064px;
-  margin: 0 auto;
-  overflow: hidden;
-  border: 2px solid #34304a;
-  border-radius: 12px;
-  background: var(--text);
+.testers .button {
+  margin-top: 8px;
+  box-shadow: 4px 4px 0 var(--accent);
 }
 
-.tour-video img {
-  display: block;
-  width: 100%;
-  height: auto;
-  opacity: 0.55;
-}
-
-.tour-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-}
-
-.tour-play {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  padding-left: 4px;
-  border-radius: 50%;
-  background: #ffffff;
-  color: var(--text);
-  box-shadow: 6px 6px 0 var(--accent);
-}
-
-.tour-length {
-  padding: 6px 14px;
-  border-radius: 6px;
-  background: var(--text);
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 600;
+.testers .button:hover,
+.testers .button:focus-visible {
+  box-shadow: 5px 5px 0 var(--accent);
 }
 
 /* Feature rows: copy beside a framed visual. */
@@ -646,7 +606,7 @@ html:has(.landing-page) {
   padding: 60px 32px;
 }
 
-.tour + .feature {
+.testers + .feature {
   padding-top: 120px;
 }
 
@@ -1840,7 +1800,7 @@ html:has(.landing-page) {
 @media (max-width: 520px) {
   .landing-header,
   .hero,
-  .tour,
+  .testers-inner,
   .feature,
   .pricing-inner,
   .get-involved-inner,
