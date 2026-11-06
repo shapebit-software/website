@@ -367,6 +367,7 @@ html:has(.landing-page) {
 }
 
 .button {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -430,13 +431,19 @@ html:has(.landing-page) {
   max-width: 860px;
 }
 
-.landing-page main .hero-badge {
-  padding: 4px 14px;
+.button-flag {
+  position: absolute;
+  top: -14px;
+  right: -18px;
+  padding: 3px 10px;
   border: 2px solid var(--text);
   border-radius: 999px;
   background: var(--orange);
+  color: var(--text);
   font-family: var(--label-font);
-  font-size: 13px;
+  font-size: 11px;
+  font-weight: 400;
+  transform: rotate(6deg);
 }
 
 .landing-page main .hero-copy h1 {
