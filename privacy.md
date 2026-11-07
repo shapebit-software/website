@@ -7,7 +7,7 @@ permalink: /privacy/
 
 # Privacy
 
-Last updated: 4 November 2026
+Last updated: 7 November 2026
 {: .page-date}
 
 **In short:** ShapeBit OS sends us nothing. It has no accounts, no telemetry and
@@ -48,6 +48,9 @@ policies.
   sees your IP address.
 - **Hosting.** [GitHub Pages](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)
   hosts this site and logs IP addresses for security.
+- **Installer version.** The home page asks our download server,
+  download.shapebit.software, which version the installer is, so the server
+  sees your IP address. It keeps no logs of requests.
 
 ## When you contact us
 

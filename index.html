@@ -8,13 +8,30 @@ title: ShapeBit OS
     <h1>Simple. Smart.<br><span>Yours.</span></h1>
     <p>A Linux desktop that works the way you do. Easy from the first minute, smart where it counts, and yours to reshape.</p>
     <div class="cta-row">
-      <a class="button button-primary" href="https://download.shapebit.software/installer.img.xz" data-event="click_download">
+      <a class="button button-primary" href="https://download.shapebit.software/shapebit-installer.img.xz" data-event="click_download">
         <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v10"/><path d="M4.5 7.5 9 12l4.5-4.5"/><path d="M3 16h12"/></svg>
         Download ShapeBit OS
         <span class="button-flag">Pre-alpha</span>
       </a>
       <a class="text-link" href="{{ '/docs/install/' | relative_url }}" data-event="click_install_guide">Installation guide &rarr;</a>
     </div>
+    <p class="download-meta">
+      <span id="installer-version" hidden></span>
+      <a href="https://download.shapebit.software/SHA256SUMS">Checksums</a>
+      <a href="https://download.shapebit.software/shapebit-installer-sources.tar" data-event="click_sources">Sources</a>
+    </p>
+    <script>
+      // The installer's version, from its record on the download server.
+      fetch('https://download.shapebit.software/shapebit-installer.img.json')
+        .then(function (response) { return response.ok ? response.json() : null; })
+        .then(function (record) {
+          const version = document.getElementById('installer-version');
+          if (!record || !record.version) return;
+          version.textContent = 'Version ' + record.version;
+          version.hidden = false;
+        })
+        .catch(function () {});
+    </script>
   </div>
 
   <figure class="laptop">
