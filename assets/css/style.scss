@@ -467,16 +467,6 @@ html:has(.landing-page) {
   justify-content: center;
 }
 
-.download-meta {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 4px 20px;
-  margin: 0;
-  color: var(--muted);
-  font-size: 15px;
-}
-
 .hero .text-link,
 .hero .text-link:hover {
   color: var(--text);

@@ -15,21 +15,6 @@ title: ShapeBit OS
       </a>
       <a class="text-link" href="{{ '/docs/install/' | relative_url }}" data-event="click_install_guide">Installation guide &rarr;</a>
     </div>
-    <p class="download-meta">
-      <span id="installer-version" hidden></span>
-    </p>
-    <script>
-      // The installer's version, from its record on the download server.
-      fetch('https://download.shapebit.software/shapebit-installer.img.json')
-        .then(function (response) { return response.ok ? response.json() : null; })
-        .then(function (record) {
-          const version = document.getElementById('installer-version');
-          if (!record || !record.version) return;
-          version.textContent = 'Version ' + record.version;
-          version.hidden = false;
-        })
-        .catch(function () {});
-    </script>
   </div>
 
   <figure class="laptop">
