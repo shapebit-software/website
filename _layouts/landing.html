@@ -6,9 +6,10 @@
     {% seo %}
     <link rel="icon" href="{{ '/assets/images/shapebit-favicon.ico' | relative_url }}" sizes="any">
     <link rel="apple-touch-icon" href="{{ '/assets/images/shapebit-icon.png' | relative_url }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=Inter:wght@400;500;600&amp;family=Silkscreen&amp;display=swap" rel="stylesheet">
+    <!-- Served from this site, not Google's, so that no visitor's address reaches Google (assets/fonts, OFL). -->
+    <style>
+{% include fonts.css %}
+    </style>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   </head>
   <body class="landing-page">
