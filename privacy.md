@@ -7,7 +7,7 @@ permalink: /privacy/
 
 # Privacy
 
-Last updated: 7 November 2026
+Last updated: 9 November 2026
 {: .page-date}
 
 **In short:** ShapeBit OS sends us nothing. It has no accounts, no telemetry and
@@ -25,7 +25,10 @@ website, they see your IP address and what is downloaded.
 | --- | --- | --- |
 | System updates | [GitHub](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement) | Every 6 hours, but not on metered connections |
 | Apps | [Flathub](https://flathub.org/privacy-policy) | When you browse or install apps, and once a day for app updates |
+| Chromium, Fedora's apps, and developer containers | [Fedora](https://docs.fedoraproject.org/en-US/legal/privacy/) | Only when you install them, and for their updates |
+| Google Chrome | [Google](https://policies.google.com/privacy) | Only if you choose it; then Chrome itself follows Google's terms |
 | Assistant and dictation | [Hugging Face](https://huggingface.co/privacy), GitHub | Only when you choose to download them |
+| Your location | [beaconDB](https://beacondb.net/privacy/), which is sent the Wi-Fi networks nearby, and reallyfreegeoip.org | Only when an app you allowed asks where you are |
 | The correct time | Public time servers (pool.ntp.org) | Regularly |
 
 **The assistant and dictation run on your computer.** What you type or say to
@@ -43,9 +46,10 @@ policies.
   which counts page views, referring sites, browser and device types, and
   clicks on buttons and links, such as the download button. It stores no IP
   addresses and no data that identifies you.
-- **Fonts.** The home page loads fonts from
-  [Google Fonts](https://developers.google.com/fonts/faq/privacy), so Google
-  sees your IP address.
+- **Fonts.** Served from this website, not from Google.
+- **Downloads.** The installer, and the home page's check for its latest
+  version, come from our own server, download.shapebit.software. It keeps no
+  record of requests, not even IP addresses.
 - **Hosting.** [GitHub Pages](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)
   hosts this site and logs IP addresses for security.
 
