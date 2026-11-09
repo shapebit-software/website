@@ -68,6 +68,6 @@ protection authority.
 
 ## Contact
 
-ShapeBit Software, <a href="#contact" data-email="address">hello at shapebit dot software</a>
+Marcin Syngajewski, who makes ShapeBit and is responsible for your data here (the data controller): <a href="#contact" data-email="address">hello at shapebit dot software</a>
 
 If this policy changes, we will update this page and the date at the top.
