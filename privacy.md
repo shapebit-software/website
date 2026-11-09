@@ -47,9 +47,9 @@ policies.
   clicks on buttons and links, such as the download button. It stores no IP
   addresses and no data that identifies you.
 - **Fonts.** Served from this website, not from Google.
-- **Downloads.** The installer, and the home page's check for its latest
-  version, come from our own server, download.shapebit.software. It keeps no
-  record of requests, not even IP addresses.
+- **Downloads.** The installer comes from our own server,
+  download.shapebit.software. It keeps no record of requests, not even IP
+  addresses.
 - **Hosting.** [GitHub Pages](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)
   hosts this site and logs IP addresses for security.
 
