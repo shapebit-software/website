@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Prepares the site for Jekyll: this repository's pages, and the OS guide
+# Prepares the site for Jekyll: this repository's pages, and the OS guidebook
 # as /docs/, with its navigation, links, and assets.
 # Usage: prepare-site.sh DOCS_SOURCE [DESTINATION] (mise run prepare, or CI).
 set -euo pipefail
