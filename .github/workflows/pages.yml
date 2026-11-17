@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    # Picks up documentation changes in the OS repository.
+    # Picks up guide changes in the OS repository.
     - cron: "0 4 * * *"
   workflow_dispatch:
 
@@ -29,9 +29,9 @@ jobs:
         with:
           repository: shapebit-software/os
           path: os
-          sparse-checkout: docs
+          sparse-checkout: guide
       - name: Prepare documentation
-        run: scripts/prepare-site os/docs .jekyll-source
+        run: scripts/prepare-site os/guide .jekyll-source
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll

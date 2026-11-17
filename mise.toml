@@ -7,7 +7,7 @@ run = "bundle install"
 
 [tasks.prepare]
 description = "Prepare the documentation from the OS repository for Jekyll"
-run = "scripts/prepare-site \"${OS_DOCS:-../os/docs}\" .jekyll-source"
+run = "scripts/prepare-site \"${OS_DOCS:-../os/guide}\" .jekyll-source"
 
 [tasks.serve]
 description = "Preview the documentation site locally"

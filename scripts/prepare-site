@@ -32,6 +32,10 @@ cp "$repo_root/privacy.md" "$destination/privacy.md"
 mkdir -p "$destination/docs"
 find "$docs_source" -maxdepth 1 -type f -name '*.md' ! -name '_Sidebar.md' \
     -exec cp {} "$destination/docs/" \;
+# Pictures that pages show, linked as assets/<file> beside the pages.
+if [[ -d "$docs_source/assets" ]]; then
+    cp -R "$docs_source/assets" "$destination/docs/assets"
+fi
 
 # Map a documentation page name to its published URL.
 page_url() {
@@ -74,21 +78,14 @@ while IFS= read -r -d '' page; do
     link_rewrites+=(-e "s|](${page_name}\(\.md\)\?)|](${url})|g")
     link_rewrites+=(-e "s|](${page_name}\(\.md\)\?#|](${url}#|g")
 done < <(find "$destination/docs" -maxdepth 1 -type f -name '*.md' -print0)
+# Pages are published one folder deeper (/docs/<page>/), so assets get absolute URLs.
+link_rewrites+=(-e "s|](assets/|](/docs/assets/|g")
 find "$destination/docs" -maxdepth 1 -type f -name '*.md' \
     -exec sed -i "${link_rewrites[@]}" {} +
 
 # Old names of renamed pages, so that their published URLs keep working.
 declare -A old_names=(
-    [Development]="building developer-guide"
-    [Design]="architecture architecture-installation design-installation"
-    [Design-Applications]="architecture-applications"
-    [Design-Base]="architecture-base"
-    [Design-Desktop]="architecture-desktop"
-    [Design-Lifecycle]="architecture-lifecycle"
-    [Design-Recovery]="architecture-recovery"
-    [Design-Security]="architecture-security"
     [Shortcuts]="keyboard-shortcuts"
-    [User-Guide]="guide"
 )
 
 while IFS= read -r -d '' page; do
