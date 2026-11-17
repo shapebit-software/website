@@ -31,7 +31,7 @@ jobs:
           path: os
           sparse-checkout: guide
       - name: Prepare documentation
-        run: scripts/prepare-site os/guide .jekyll-source
+        run: scripts/prepare-site.sh os/guide .jekyll-source
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
