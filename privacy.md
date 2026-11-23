@@ -7,7 +7,7 @@ permalink: /privacy/
 
 # Privacy
 
-Last updated: 9 November 2026
+Last updated: 23 November 2026
 {: .page-date}
 
 **In short:** ShapeBit OS sends us nothing. It has no accounts, no telemetry and
@@ -28,6 +28,7 @@ website, they see your IP address and what is downloaded.
 | Chromium, Fedora's apps, and developer containers | [Fedora](https://docs.fedoraproject.org/en-US/legal/privacy/) | Only when you install them, and for their updates |
 | Google Chrome | [Google](https://policies.google.com/privacy) | Only if you choose it; then Chrome itself follows Google's terms |
 | Assistant and dictation | [Hugging Face](https://huggingface.co/privacy), GitHub | Only when you choose to download them |
+| The assistant's web lookups | [Wikipedia](https://foundation.wikimedia.org/wiki/Policy:Privacy_policy), which is sent what the assistant looks up | Only when you allow the assistant to look something up |
 | Your location | [beaconDB](https://beacondb.net/privacy/), which is sent the Wi-Fi networks nearby, and reallyfreegeoip.org | Only when an app you allowed asks where you are |
 | The correct time | Public time servers (pool.ntp.org) | Regularly |
 
